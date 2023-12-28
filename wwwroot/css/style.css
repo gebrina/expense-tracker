@@ -1,0 +1,37 @@
+body {
+  background: linear-gradient(
+    to bottom,
+    rgb(8, 26, 68),
+    rgb(3, 122, 3),
+    rgb(2, 2, 50)
+  );
+}
+
+.navbar a {
+  color: white;
+  font-size: 2rem;
+  padding: 10px 0;
+}
+
+p {
+  font-size: 2rem;
+}
+
+section:has(.hero-img) {
+  min-height: 80vh;
+  background: linear-gradient(
+      to top,
+      rgb(8, 26, 68),
+      rgb(3, 122, 3),
+      rgba(0, 0, 255, 0.3)
+    ),
+    url("/imgs/expense.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  gap: 15px;
+}
+
+.hero h1 {
+  font-size: 5rem;
+}
