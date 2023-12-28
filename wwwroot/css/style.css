@@ -17,7 +17,7 @@ p {
   font-size: 2rem;
 }
 
-section:has(.hero-img) {
+section:has(.hero-section) {
   min-height: 80vh;
   background: linear-gradient(
       to top,

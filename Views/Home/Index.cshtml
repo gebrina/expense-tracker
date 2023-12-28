@@ -2,12 +2,22 @@
     ViewData["Title"] = "Home Page";
 }
 
-    <section class="d-flex h-100 hero justify-content-center">
-         <div class="align-self-center">
+    <section class="d-flex h-100 hero  p-5 justify-content-between align-items-end">
+         <div>
             <h1 class="text-light">Expense <br/> Tracker</h1>
-            <p class="text-light">Track and manage your each expenses.</p>
+            <p class="text-light">Track and manage your expenses.</p>
             <a asp-controller="Expense" class="btn py-2 px-4 fs-3 btn-danger" asp-action="AddExpense">Start Tracking</a>
          </div>
-            <div class="hero-img flex-grow-1">
+            <div class="hero-section d-flex flex-column ">
+                <h1 class="text-white">Expenses</h1>
+                <ul class="pb-3 list-group list-group-flush list-style-none">
+                    <li class="list-group-item  bg-transparent text-white fs-3">
+                    <i class="bi bi-plus"></i>  Add
+                    </li>
+                    <li class="list-group-item  bg-transparent text-white fs-3">
+                      <i class="bi bi-x"></i>   Remove 
+                    </li>
+                    <li class="list-group-item bg-transparent text-white fs-3"><i class="bi bi-pencil"></i> Update</li>
+                </ul>
             </div>
     </section>
