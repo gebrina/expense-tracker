@@ -5,16 +5,20 @@ body {
     rgb(3, 122, 3),
     rgb(2, 2, 50)
   );
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100dvh;
 }
 
 .navbar a {
   color: white;
   font-size: 2rem;
   padding: 5px 20px !important;
+  border-radius: 10px;
   transition: all 0.5s ease;
 }
 
-.navbar a:hover {
+.navbar .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.3);
   color: white;
 }
