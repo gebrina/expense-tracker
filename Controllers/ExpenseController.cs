@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using ExpenseTracker.Models;
 
 namespace ExpenseTracker.Controllers{
     public class ExpenseController:Controller{
         public IActionResult Index(){
-            return View();
+         var expenses = Expense.GetExpenses();
+            return View(expenses);
         }
     }
 }

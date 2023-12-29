@@ -9,8 +9,13 @@ namespace ExpenseTracker.Models{
 
         public List<Expense> Expenses = [];
 
-        public List<Expense> GetExpenses(){
-            return Expenses;
+        public static List<Expense> GetExpenses(){
+            Expense forMobile = new(){ID=1,Description="Because I have to buy mobile phone.",Amount=200};
+            Expense forComputer = new(){ID=2,Description="Because I have to buy Computer",Amount=800};
+            Expense forSofa = new(){ID=3,Description="Because I have to buy sofa",Amount=400};
+            Expense forTv = new(){ID=4,Description="Because I have to buy Tv",Amount=800};
+            //return Expenses;
+            return [forComputer,forMobile,forSofa,forTv];
         }
 
         public void AddExpense(Expense expense){
