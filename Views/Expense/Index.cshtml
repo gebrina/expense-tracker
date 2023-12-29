@@ -1,4 +1,15 @@
+@model ExpenseTracker.Models.Expense;
 
-<section class="container card shadow min-h-100 bg-transparent">
-    <h1 class="">Your Expenses</h1>
+<section class="container">
+    <form asp-action="AddExpense" class="card fs-3 bg-transparent w-50">
+        <div class="form-group mb-3">
+            <label asp-for="Amount" class="form-label" >Amount</label>
+            <input  asp-for="Amount"  class="form-control bg-transparent"/>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea style="resize: none;" rows="4" asp-for="Description" class="form-control bg-transparent"></textarea>
+        </div>
+        <button class="btn btn-success fs-3 my-3">Add Expense</button>
+    </form>
 </section>

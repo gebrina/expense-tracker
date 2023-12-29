@@ -17,8 +17,8 @@
       "PackagePath": "staticwebassets/imgs/expense.jpg"
     },
     {
-      "Id": "/home/g/Documents/dotnet/ExpenseTracker/wwwroot/js/site.js",
-      "PackagePath": "staticwebassets/js/site.js"
+      "Id": "/home/g/Documents/dotnet/ExpenseTracker/wwwroot/js/script.js",
+      "PackagePath": "staticwebassets/js/script.js"
     },
     {
       "Id": "/home/g/Documents/dotnet/ExpenseTracker/wwwroot/lib/bootstrap/LICENSE",

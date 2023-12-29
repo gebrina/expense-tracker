@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wRQOr6Brr0Ih1SwKWqkkUUg1/f7r8ZIJd3YSmenQfs4=",
+  "Hash": "X0h3NtjiAMvKTybjOOY/14r4sTMIxaE/PkZ92Enc0os=",
   "Source": "ExpenseTracker",
   "BasePath": "_content/ExpenseTracker",
   "Mode": "Default",
@@ -112,12 +112,12 @@
       "OriginalItemSpec": "wwwroot/imgs/expense.jpg"
     },
     {
-      "Identity": "/home/g/Documents/dotnet/ExpenseTracker/wwwroot/js/site.js",
+      "Identity": "/home/g/Documents/dotnet/ExpenseTracker/wwwroot/js/script.js",
       "SourceId": "ExpenseTracker",
       "SourceType": "Discovered",
       "ContentRoot": "/home/g/Documents/dotnet/ExpenseTracker/wwwroot/",
       "BasePath": "_content/ExpenseTracker",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/script.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,7 +128,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/js/site.js"
+      "OriginalItemSpec": "wwwroot/js/script.js"
     },
     {
       "Identity": "/home/g/Documents/dotnet/ExpenseTracker/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
