@@ -1,27 +1,41 @@
 @model IEnumerable<ExpenseTracker.Models.Expense>;
 
 <section class="container expense-container d-flex flex-sm-column flex-lg-row gap-5">
-    <form asp-action="AddExpense" method="post" class="card fs-3  bg-transparent w-25 ">
+    <form asp-action="AddExpense" method="post" class="card fs-3  bg-transparent ">
         <div class="form-group mb-3">
             <label for="Amount" class="form-label" >Amount</label>
-            <input  id="Amount" name="Amount"  class="form-control  bg-transparent"/>
+            <input autofocus id="Amount" name="Amount"  class="form-control  bg-transparent"/>
         </div>
         <div class="form-group">
             <label for="Description" class="form-label">Description</label>
             <textarea style="resize: none;" rows="4" id="Description" name="Description" class="form-control bg-transparent"></textarea>
         </div>
-        <button class="btn btn-success fs-5 my-3">Add Expense</button>
+        <button class="btn btn-success fs-6 my-3"> <i class="bi bi-save"></i> Add Expense </button>
     </form>
     <div class="flex-grow-1 w-100 d-flex flex-column ">
             <h1 class="text-center fs-2">Y'r Expenses</h1>
-        <table class="table table-hover  w-100">
+            <div class="table-responsive">
+        <table class="table text-center  table-hover  w-100">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Amount</th>
                     <th>Description</th>
+                    <th colspan="2">Action</th>
                 </tr>
             </thead>
+            <tbody>
+                @foreach(ExpenseTracker.Models.Expense expense in Model){
+                    <tr>
+                        <td>@expense.ID</td>
+                        <td>@expense.Amount</td>
+                        <td>@expense.Description</td>
+                        <td><i class="bi btn text-info bi-pencil-square"></i></td>
+                        <td><i class="bi btn text-danger fw-bold bi-trash"></i></td>
+                    </tr>
+                }
+            </tbody>
         </table>
+        </div>
     </div>
 </section>

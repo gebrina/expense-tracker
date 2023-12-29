@@ -42,6 +42,9 @@ body footer {
     }
   }
 }
+form {
+  width: 500px;
+}
 .navbar a {
   color: white;
   font-size: 2rem;
