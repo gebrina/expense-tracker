@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/style.css"/>
 </head>
 <body>
-    <header>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm  border-bottom box-shadow mb-3">
             <div class="container-fluid px-5">
                 <a class="navbar-brand fw-bold fs-3" asp-area="" asp-controller="Home"  asp-action="Index">ExT</a>
@@ -30,11 +30,10 @@
             </div>
         </nav>
     </header>
-    <div class="container-fluid">
-        <main role="main" class="pb-3">
+       
+        <main  role="main" class="pb-3 container-fluid">
             @RenderBody()
         </main>
-    </div>
 
     <footer class="border-top footer text-muted">
         <div class="container">

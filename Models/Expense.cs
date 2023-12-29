@@ -18,7 +18,8 @@ namespace ExpenseTracker.Models{
         }
 
         public void UpdateExpense(Expense expense,int ID){
-         var expenseTobeUpdated = Expenses.Where(expense=>expense.ID==ID);
+         var expenseTobeUpdated = Expenses.Where(expense=>expense.ID==ID).ToArray()[0];
+         
         }
       
         public void DeleteExpense(int ID){
