@@ -14,11 +14,11 @@ namespace ExpenseTracker.Controllers{
         [Route("/Expense/Index/{ID}")]
         public IActionResult Index(string ID){
          Expense.DeleteExpense(Convert.ToInt32(ID));
-         var expenses = Expense.GetExpenses(null);
-         return View(expenses);
+         return Redirect("/Expense");
         }
           
         [HttpPost]
+        [Route("Expense")]
         public IActionResult Index(Expense expense){
             Expense.AddExpense(expense);
             var expenses = Expense.GetExpenses(null);

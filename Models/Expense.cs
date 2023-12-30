@@ -42,20 +42,10 @@ namespace ExpenseTracker.Models{
 
         public static  void AddExpense(Expense expense){
              try{
-                // pass absulte path of your file 
-                string dataFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
-                FileStream fs = new(dataFile,FileMode.Append,FileAccess.Write);
-                StreamWriter sr = new(fs);
                 var expenses = GetExpenses(null);
                 expense.ID=expenses.Count+1;
-                string stringifedExpense = "\n"+expense.ID +
-                "   "
-                +expense.Amount
-                +"   "
-                +expense.Description;
-                sr.WriteLine(stringifedExpense);
-                sr.Close();
-                fs.Close();
+                expenses.Add(expense);
+                UpdateData(expenses);
              }catch(Exception exception){
                 Console.WriteLine(exception.Message);
              }
@@ -67,6 +57,7 @@ namespace ExpenseTracker.Models{
         }
       
         public static void UpdateData(List<Expense> expenses){
+
            try{
                 // pass absulte path of your file 
                 string dataFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
