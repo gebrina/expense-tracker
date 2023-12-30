@@ -23,7 +23,7 @@
                     <th>ID</th>
                     <th>Amount</th>
                     <th>Description</th>
-                    <th colspan="2">Action</th>
+                    <th >Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +32,6 @@
                         <td>@expense.ID</td>
                         <td>@expense.Amount</td>
                         <td>@expense.Description</td>
-                        <td><i  class="bi btn text-info bi-pencil-square"></i></td>
                         <td><a asp-action="Index"  asp-route-id="@expense.ID" class="bi btn text-danger fw-bold bi-trash"></a></td>
                     </tr>
                 }

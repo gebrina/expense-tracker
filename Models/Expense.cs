@@ -50,11 +50,6 @@ namespace ExpenseTracker.Models{
                 Console.WriteLine(exception.Message);
              }
         }
-
-        public static void UpdateExpense(Expense expense,int ID){
-            var expenses = GetExpenses(null);
-         var expenseTobeUpdated = expenses.Where(expense=>expense.ID==ID).ToArray()[0];
-        }
       
         public static void UpdateData(List<Expense> expenses){
 
