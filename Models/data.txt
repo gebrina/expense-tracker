@@ -1,12 +1,8 @@
-------------------------------------------------------------------------------------------------
-ID                            Amount                         Description
-------------------------------------------------------------------------------------------------
-1                             400                            for mobile phone
+1   200   descriton goes here like so
+1   300   I have to buy something special
 
-1                             100                            descriton gos here for the purpose of .net
+1   300   I have to buy something special
 
-1                             100                            descriton gos here for the purpose of .net
+1   300   I have to buy something special
 
-1                             100                            C# StreamWriter class is used to write characters to a
- stream in specific encoding. It inherits TextWriter class. 
- It provides overloaded write() and writeln() methods to write data into file.
+5   500   To buy somthing special for me and for us.

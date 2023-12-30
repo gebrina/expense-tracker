@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ExpenseTracker.Models{
     public class Expense{
+
         [Key]
         public int ID {get;set;}
 
@@ -15,40 +16,59 @@ namespace ExpenseTracker.Models{
         [RegularExpression(@"^[0-9]+$",ErrorMessage ="You must enter amount in numeric format.")]
         [Range(1,long.MaxValue,ErrorMessage ="Amount must be greater than 0")]
         public string Amount {get;set;} = string.Empty;
-        public static List<Expense> Expenses =>[];
 
         public static List<Expense> GetExpenses(){
-            return Expenses;
+            string dataFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
+            FileStream fs = new(dataFile, FileMode.Open,FileAccess.Read);
+            StreamReader sr = new(fs);
+            var nextLine = "";
+
+            var expenses = new List<Expense>();
+            while((nextLine=sr.ReadLine())!=null){
+                var datas = nextLine.Split("   ");
+                if(datas.Length==3){
+                 Expense expense = new(){
+                    ID=Convert.ToInt32(datas[0]),
+                    Amount=datas[1],
+                    Description=datas[2]
+                 };
+                 expenses.Add(expense);
+                }
+            }
+            sr.Close();
+            fs.Close();
+            return expenses;
         }
 
         public static  void AddExpense(Expense expense){
              try{
                 // pass absulte path of your file 
-
-                string expensesFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
-                FileStream fs = new(expensesFile,FileMode.Append,FileAccess.Write);
+                string dataFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
+                FileStream fs = new(dataFile,FileMode.Append,FileAccess.Write);
                 StreamWriter sr = new(fs);
-                expense.ID = Expenses.Count + 1;
+                var expenses = GetExpenses();
+                expense.ID=expenses.Count+1;
                 string stringifedExpense = "\n"+expense.ID +
-                "                             "
+                "   "
                 +expense.Amount
-                +"                            "
+                +"   "
                 +expense.Description;
                 sr.WriteLine(stringifedExpense);
                 sr.Close();
                 fs.Close();
-                Console.WriteLine("text writen"+ stringifedExpense);
              }catch(Exception exception){
                 Console.WriteLine(exception.Message);
              }
         }
 
         public static void UpdateExpense(Expense expense,int ID){
-         var expenseTobeUpdated = Expenses.Where(expense=>expense.ID==ID).ToArray()[0];
+            var expenses = GetExpenses();
+         var expenseTobeUpdated = expenses.Where(expense=>expense.ID==ID).ToArray()[0];
         }
       
         public void DeleteExpense(int ID){
-         var expenseTobeDeleted = Expenses.Where(expense=>expense.ID==ID);
+            var expenses = GetExpenses();
+         var expenseTobeDeleted = expenses.Where(expense=>expense.ID==ID);
         }
         
     }
