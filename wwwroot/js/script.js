@@ -12,4 +12,8 @@ window.addEventListener("load", () => {
     activeLink = document.querySelector("#expense");
   }
   activeLink.classList.add("active");
+
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((tooltip) => {
+    new bootstrap.Tooltip(tooltip);
+  });
 });

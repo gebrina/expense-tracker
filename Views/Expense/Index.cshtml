@@ -15,9 +15,9 @@
    
     </form>
     <div class="flex-grow-1 w-100 d-flex flex-column ">
-            <h1 class="text-center fs-2">Y'r Expenses</h1>
-            <div class="table-responsive">
-        <table class="table text-center  table-hover  w-100">
+            <h1 class="text-center fs-2 pb-2">Y'r Expenses</h1>
+            <div style="height: 400px;" class="table-responsive">
+        <table  class="table text-center   table-hover  w-100">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -31,8 +31,17 @@
                     <tr>
                         <td>@expense.ID</td>
                         <td>@expense.Amount</td>
-                        <td>@expense.Description</td>
-                        <td><a asp-action="Index"  asp-route-id="@expense.ID" class="bi btn text-danger fw-bold bi-trash"></a></td>
+                        <td
+                         data-bs-toggle="tooltip" data-bs-title="@expense.Description"
+                          class="text-capitalize">
+                          @if(expense.Description.Length>30){
+                          @:@expense.Description.Substring(0,30)...
+                          }else{
+                           @expense.Description
+                          }
+                        </td>
+                        <td>
+                            <a asp-action="Index"  asp-route-id="@expense.ID" class="bi btn text-danger fw-bold bi-trash"></a></td>
                     </tr>
                 }
             </tbody>
