@@ -17,7 +17,7 @@ namespace ExpenseTracker.Models{
         [Range(1,long.MaxValue,ErrorMessage ="Amount must be greater than 0")]
         public string Amount {get;set;} = string.Empty;
 
-        public static List<Expense> GetExpenses(){
+        public static List<Expense> GetExpenses(List<Expense>? Expenses){
             string dataFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
             FileStream fs = new(dataFile, FileMode.Open,FileAccess.Read);
             StreamReader sr = new(fs);
@@ -37,7 +37,7 @@ namespace ExpenseTracker.Models{
             }
             sr.Close();
             fs.Close();
-            return expenses;
+            return Expenses?.Count>0?Expenses:expenses;
         }
 
         public static  void AddExpense(Expense expense){
@@ -46,7 +46,7 @@ namespace ExpenseTracker.Models{
                 string dataFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
                 FileStream fs = new(dataFile,FileMode.Append,FileAccess.Write);
                 StreamWriter sr = new(fs);
-                var expenses = GetExpenses();
+                var expenses = GetExpenses(null);
                 expense.ID=expenses.Count+1;
                 string stringifedExpense = "\n"+expense.ID +
                 "   "
@@ -62,13 +62,33 @@ namespace ExpenseTracker.Models{
         }
 
         public static void UpdateExpense(Expense expense,int ID){
-            var expenses = GetExpenses();
+            var expenses = GetExpenses(null);
          var expenseTobeUpdated = expenses.Where(expense=>expense.ID==ID).ToArray()[0];
         }
       
-        public void DeleteExpense(int ID){
-            var expenses = GetExpenses();
-         var expenseTobeDeleted = expenses.Where(expense=>expense.ID==ID);
+        public static void UpdateData(List<Expense> expenses){
+           try{
+                // pass absulte path of your file 
+                string dataFile = "/home/g/Documents/dotnet/ExpenseTracker/Models/data.txt";
+                FileStream fs = new(dataFile,FileMode.Create,FileAccess.Write);
+                StreamWriter sr = new(fs);
+
+                foreach(Expense expense in expenses){
+                string stringifedExpense = $"\n {expense.ID}   {expense.Amount}   {expense.Description}";
+                  sr.WriteLine(stringifedExpense);
+                }
+
+                sr.Close();
+                fs.Close();
+             }catch(Exception exception){
+                Console.WriteLine(exception.Message);
+             }
+        }
+
+        public static void DeleteExpense(int ID){
+         var expenses = GetExpenses(null);
+         var remainingExpenses = expenses.Where(expense=>expense.ID!=ID).ToList();
+         UpdateData(remainingExpenses);
         }
         
     }

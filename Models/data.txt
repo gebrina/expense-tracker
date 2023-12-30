@@ -1,8 +1,6 @@
-1   200   descriton goes here like so
-1   300   I have to buy something special
 
-1   300   I have to buy something special
+ 15   500   To buy somthing special for me and for us.
 
-1   300   I have to buy something special
+ 16   500   To buy somthing special for me and for us.
 
-5   500   To buy somthing special for me and for us.
+ 17   500   To buy somthing special for me and for us.

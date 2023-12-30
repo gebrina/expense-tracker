@@ -32,8 +32,8 @@
                         <td>@expense.ID</td>
                         <td>@expense.Amount</td>
                         <td>@expense.Description</td>
-                        <td><i class="bi btn text-info bi-pencil-square"></i></td>
-                        <td><i class="bi btn text-danger fw-bold bi-trash"></i></td>
+                        <td><i  class="bi btn text-info bi-pencil-square"></i></td>
+                        <td><a asp-action="Index"  asp-route-id="@expense.ID" class="bi btn text-danger fw-bold bi-trash"></a></td>
                     </tr>
                 }
             </tbody>
