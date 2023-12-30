@@ -7,10 +7,12 @@ namespace ExpenseTracker.Controllers{
          var expenses = Expense.GetExpenses();
             return View(expenses);
         }
-
-        public IActionResult AddExpense(Expense expense){
+          
+        [HttpPost]
+        public IActionResult Index(Expense expense){
             Expense.AddExpense(expense);
-            return View();
+            var expenses = Expense.GetExpenses();
+            return View(expenses);
         }
     }
 }

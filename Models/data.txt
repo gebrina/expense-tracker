@@ -1,0 +1,12 @@
+------------------------------------------------------------------------------------------------
+ID                            Amount                         Description
+------------------------------------------------------------------------------------------------
+1                             400                            for mobile phone
+
+1                             100                            descriton gos here for the purpose of .net
+
+1                             100                            descriton gos here for the purpose of .net
+
+1                             100                            C# StreamWriter class is used to write characters to a
+ stream in specific encoding. It inherits TextWriter class. 
+ It provides overloaded write() and writeln() methods to write data into file.
